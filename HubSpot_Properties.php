@@ -16,9 +16,9 @@
 * language governing permissions and limitations under the
 * License.
 */
-require_once('class.baseclient.php');
+//require_once('class.baseclient.php');
 
-class HubSpot_Properties extends HubSpot_Baseclient{
+class HubSpot_Properties extends HubSpot_BaseClient{
 
 	protected $API_PATH = 'contacts';
 	protected $API_VERSION = 'v1';	
@@ -27,7 +27,7 @@ class HubSpot_Properties extends HubSpot_Baseclient{
 	* Get all Properties
 	*
 	*
-	* @return Array of all properties in portal
+	* @return Array of all properties in portal	
 	*
 	* @throws HubSpot_Exception
 	**/
