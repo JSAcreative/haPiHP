@@ -16,7 +16,7 @@
 * language governing permissions and limitations under the
 * License.
 */
-require_once('class.baseclient.php');
+//require_once('class.baseclient.php');
 
 class HubSpot_Prospects extends HubSpot_BaseClient {
     //Client for HubSpot Prospects API.
@@ -35,6 +35,7 @@ class HubSpot_Prospects extends HubSpot_BaseClient {
     **/
     public function get_timeline($params) {
         $endpoint = 'timeline';
+ 
         try {
             return json_decode($this->execute_get_request($this->get_request_url($endpoint,$params)));
         } catch (HubSpot_Exception $e) {

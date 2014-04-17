@@ -16,7 +16,7 @@
 * language governing permissions and limitations under the
 * License.
 */
-require_once('class.baseclient.php');
+//require_once('class.baseclient.php');
 
 class HubSpot_Blog extends HubSpot_BaseClient {
     //Client for HubSpot Blog API.
@@ -36,9 +36,8 @@ class HubSpot_Blog extends HubSpot_BaseClient {
     *
     * @throws HubSpot_Exception
     **/
-    public function get_blogs($params, $content_type) {
+    public function get_blogs($params, $content_type = 'json') {
         $endpoint = 'list.' . $content_type;
-
         if ($content_type == 'json') {
             try {
                 return json_decode($this->execute_get_request($this->get_request_url($endpoint,$params)));
@@ -100,7 +99,7 @@ class HubSpot_Blog extends HubSpot_BaseClient {
     *
     * @throws HubSpot_Exception
     **/
-    public function get_posts($params, $guid, $content_type) {
+    public function get_posts($guid, $params, $content_type='json') {
         $endpoint = $guid . '/posts.' . $content_type;
 
         if ($content_type == 'json') {
@@ -132,7 +131,7 @@ class HubSpot_Blog extends HubSpot_BaseClient {
     *
     * @throws HubSpot_Exception
     **/
-    public function get_comments($params, $guid, $content_type) {
+    public function get_comments($guid, $params, $content_type = 'json') {
         $endpoint = $guid . '/comments.' . $content_type;
 
         if ($content_type == 'json') {

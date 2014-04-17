@@ -16,7 +16,7 @@
 * language governing permissions and limitations under the
 * License.
 */
-require_once('class.baseclient.php');
+//require_once('class.baseclient.php');
 
 class HubSpot_Keywords extends HubSpot_BaseClient {
     //Client for HubSpot Keywords API.

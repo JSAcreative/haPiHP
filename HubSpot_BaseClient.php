@@ -177,7 +177,7 @@ class HubSpot_BaseClient
      *
      * @throws HubSpot_Exception
      */
-    protected function execute_get_request($url)
+    public function execute_get_request($url)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -417,11 +417,12 @@ class HubSpot_BaseClient
                 }
                 else
                 {
+					//@todo hacked out urlencode because it was breaking get all properties call
                     $paramstring = $paramstring . '&' . $parameter . '=' . $value;
                 }
             }
         }
-//if(stristr($paramstring, 'property')){print_r($paramstring);exit;}
+		
         return $paramstring;
     }
 

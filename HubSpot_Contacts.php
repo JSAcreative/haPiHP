@@ -103,6 +103,7 @@ class HubSpot_Contacts extends HubSpot_BaseClient{
     **/
     public function get_all_contacts($params){
     	$endpoint = 'lists/all/contacts/all';
+    	
     	try{
     		return json_decode($this->execute_get_request($this->get_request_url($endpoint,$params)));
     	}
